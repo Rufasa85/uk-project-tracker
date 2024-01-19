@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row border-bottom bg-dark text-light">
+        <div class="col-12">
+          <h1 class="text-center">Project Tracker</h1>
+          <h2 class="text-center">Current Time and Date:</h2>
+          <h3 id="time-heading" class="text-center"></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-12 mt-3">
+          <div class="card">
+            <h4 class="card-header bg-dark text-light">Instructions</h4>
+            <div class="card-body">
+              <p>Click the button below to create a project! Info needed:</p>
+              <ul>
+                <li>project name</li>
+                <li>Project Type</li>
+                <li>Due Date</li>
+                <li>Hourly Rate</li>
+              </ul>
+            </div>
+            <button
+              class="btn btn-dark card-footer"
+              data-bs-toggle="modal"
+              data-bs-target="#project-form"
+            >
+              Add Project
+            </button>
+            <div
+              class="modal fade"
+              id="project-form"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-dark text-light">
+                    <h2 class="modal-title fs-5">Add a Project</h2>
+                    <button
+                      type="button"
+                      class="btn text-light"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      X
+                    </button>
+                  </div>
+                  <form>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="newProjectName" class="form-label"
+                          >Project Name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="newProjectName"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="newProjectType" class="form-label"
+                          >Project Type</label
+                        >
+                        <select
+                          class="form-select"
+                          id="newProjectType"
+                          aria-label="Default select example"
+                        >
+                          <option>Front End</option>
+                          <option>Back End</option>
+                          <option>Full Stack</option>
+                          <option>Print</option>
+                          <option>Email</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="newProjectHourly" class="form-label"
+                          >Hourly Rate</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="newProjectHourly"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="newProjectDue" class="form-label"
+                          >Due Date</label
+                        >
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="newProjectDue"
+                        />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="submit" class="btn btn bg-dark text-light"  data-bs-dismiss="modal">
+                        Add Project
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 col-12 mt-3">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Project name</th>
+                <th>Project Type</th>
+                <th>Hourly Rate ($)</th>
+                <th>Due Date</th>
+                <th>Days Until Due Date</th>
+                <th>Potential Total Earnings ($)</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
